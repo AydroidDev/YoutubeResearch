@@ -33,7 +33,7 @@ public class VideoAdapter extends ArrayAdapter<Video> {
             convertView = layoutInflater.inflate(R.layout.viewholder_video, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.title = (TextView) convertView.findViewById(R.id.title);
-            viewHolder.details = (TextView) convertView.findViewById(R.id.details);
+            viewHolder.details = (TextView) convertView.findViewById(R.id.description);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
