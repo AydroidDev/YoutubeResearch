@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
-        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.2.0_a644966cdf534dcf3b6b0d061f40c227b7586e27.jar" />
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.2.0_3f68aa69818f4f9b1fec75edd912349655f92d75.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,12 +21,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.2.0_3f68aa69818f4f9b1fec75edd912349655f92d75.jar" />
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.2.0_a644966cdf534dcf3b6b0d061f40c227b7586e27.jar" />
     </item>
     <item
         is-multidex="false"
@@ -39,21 +39,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="30a4938ea5235ccf532b3e9f04200e68547e36ad">
-        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.2.0_00e8952c38ed85292dae5719511cb37295f89e48.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
         <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.2.0_314d05d8b114925da353c8ecabfd73ad2bb2d68b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30a4938ea5235ccf532b3e9f04200e68547e36ad">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.2.0_00e8952c38ed85292dae5719511cb37295f89e48.jar" />
     </item>
     <item
         is-multidex="false"

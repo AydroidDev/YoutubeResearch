@@ -9,17 +9,17 @@ import android.widget.TextView;
 import java.util.List;
 
 import fr.esilv.s8.youtubesearch.R;
-import fr.esilv.s8.youtubesearch.models.Video;
+import fr.esilv.s8.youtubesearch.models.VideoResponse;
 
 /**
  * Created by Salem on 20/03/2017.
  */
 
-public class VideoAdapter extends ArrayAdapter<Video> {
+public class VideoAdapter extends ArrayAdapter<VideoResponse.ItemsBean> {
 
     private final LayoutInflater layoutInflater;
 
-    public VideoAdapter(Context context, List<Video> objects) {
+    public VideoAdapter(Context context, List<VideoResponse.ItemsBean> objects) {
         super(context, 0, objects);
         layoutInflater = LayoutInflater.from(context);
     }
@@ -40,8 +40,8 @@ public class VideoAdapter extends ArrayAdapter<Video> {
         }
 
         //Finally, we get the current item, and we set the View according to the data we wish to display
-        Video video = getItem(position);
-        viewHolder.title.setText(video.getTitle());
+        VideoResponse.ItemsBean item = getItem(position);
+        viewHolder.title.setText(item.getSnippet().getTitle());
         //viewHolder.firstNameTextView.setText(student.getFirstName());
         return convertView;
     }

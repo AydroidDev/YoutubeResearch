@@ -1,6 +1,5 @@
 package fr.esilv.s8.youtubesearch.activities;
 
-import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,19 +12,19 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.esilv.s8.youtubesearch.adapters.VideoAdapter;
-import fr.esilv.s8.youtubesearch.models.Video;
-
+import fr.esilv.s8.youtubesearch.models.Constants;
+import fr.esilv.s8.youtubesearch.models.VideoResponse;
 import fr.esilv.s8.youtubesearch.R;
-import fr.esilv.s8.youtubesearch.models.Videos;
+
 
 public class SearchActivity extends AppCompatActivity {
     private ListView listView;
-    private static final String VIDEOS_URL = "https://www.googleapis.com/youtube/v3/videos";
     private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
+    private VideoResponse responseAsObject;
+    private List<VideoResponse.ItemsBean> listVideos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +35,30 @@ public class SearchActivity extends AppCompatActivity {
         //Bind the XML ListView to the Java ListView
         listView = (ListView) findViewById(R.id.ListVideos);
 
+        getVideos("Android");
+        //fr.esilv.s8.youtubesearch.models.VideoResponse;
         //Populate the ListView with Dummy Content
-        List<Video> videos = createDummyVideoList();
-        VideoAdapter videoAdapter = new VideoAdapter(this, videos);
-        listView.setAdapter(videoAdapter);
+
     }
 
 // Get Json Video datas
-    private void getVideos() {
-        StringRequest contractsRequest = new StringRequest(VIDEOS_URL + "?apiKey=" /* + SyncStateContract.Constants.API_KEY*/, new Response.Listener<String>() {
+    private void getVideos(String queryString) {
+        String stringReadyForQuery = TransformStringQuery(queryString);
+        //Log.d("Test", "***********************TESSST**************");
+        Log.d("TEST",Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&type=video&key=" + Constants.API_KEY);
+
+        StringRequest videosRequest = new StringRequest(Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&key=" + Constants.API_KEY , new Response.Listener<String>() {
+
+
             @Override
             public void onResponse(String response) {
                 //parse data from webservice to get Videos as Java object
-                Videos videos = new Gson().fromJson(response, Videos.class);
+                responseAsObject = new Gson().fromJson(response, VideoResponse.class);
+                listVideos = responseAsObject.getItems();
+                setAdapter(responseAsObject);
+
+
+
             }
 
         }, new Response.ErrorListener() {
@@ -58,16 +68,20 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        Volley.newRequestQueue(this).add(contractsRequest);
+        Volley.newRequestQueue(this).add(videosRequest);
     }
 
 
-    private List<Video> createDummyVideoList() {
-        List<Video> videoList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Video video = new Video("Video Test", "channel Test", "url TEst");
-            videoList.add(video);
-        }
-        return videoList;
+    private String TransformStringQuery(String queryString){
+        String stringTransformed;
+        stringTransformed = queryString.replace(' ','|');
+        return stringTransformed;
     }
+
+    private void setAdapter(VideoResponse videoResponse) {
+        VideoAdapter videoAdapter = new VideoAdapter(this, listVideos);
+        listView.setAdapter(videoAdapter);
+    }
+
+
 }
