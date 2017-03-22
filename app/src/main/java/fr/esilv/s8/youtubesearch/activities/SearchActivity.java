@@ -3,7 +3,10 @@ package fr.esilv.s8.youtubesearch.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import com.android.volley.Response;
@@ -11,6 +14,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -22,7 +27,8 @@ import fr.esilv.s8.youtubesearch.R;
 
 public class SearchActivity extends AppCompatActivity {
     private ListView listView;
-    private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
+    private Button buttonResearch;
+    private TextView search;
     private VideoResponse responseAsObject;
     private List<VideoResponse.ItemsBean> listVideos;
 
@@ -34,10 +40,17 @@ public class SearchActivity extends AppCompatActivity {
 
         //Bind the XML ListView to the Java ListView
         listView = (ListView) findViewById(R.id.ListVideos);
-
-        getVideos("Android");
+        buttonResearch = (Button) findViewById(R.id.buttonResearch);
+        search = (TextView) findViewById(R.id.textVideo);
+        getVideos("");
         //fr.esilv.s8.youtubesearch.models.VideoResponse;
         //Populate the ListView with Dummy Content
+
+        buttonResearch.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                getVideos(search.getText().toString());
+            }
+        });
 
     }
 
@@ -45,9 +58,14 @@ public class SearchActivity extends AppCompatActivity {
     private void getVideos(String queryString) {
         String stringReadyForQuery = TransformStringQuery(queryString);
         //Log.d("Test", "***********************TESSST**************");
-        Log.d("TEST",Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&type=video&key=" + Constants.API_KEY);
+        String query="";
+        Log.d("TEST",Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&maxResults="+Constants.NUMBER_OF_VIDEOS_RETURNED+"&type=video&key=" + Constants.API_KEY);
+        if(queryString == "")
+            query = Constants.VIDEOS_URL + "&order=date&relevanceLanguage=fr&key=" + Constants.API_KEY;
+        else
+        query = Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&maxResults="+Constants.NUMBER_OF_VIDEOS_RETURNED+ "&key=" + Constants.API_KEY;
 
-        StringRequest videosRequest = new StringRequest(Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&key=" + Constants.API_KEY , new Response.Listener<String>() {
+        StringRequest videosRequest = new StringRequest(query, new Response.Listener<String>() {
 
 
             @Override

@@ -7,5 +7,6 @@ package fr.esilv.s8.youtubesearch.models;
 public final class Constants {
     public static final String VIDEOS_URL = "https://www.googleapis.com/youtube/v3/search?part=snippet";
     public static final String API_KEY = "AIzaSyCRVw5G7NdLf6aYGBygJ1uVCcPQo0EmOiY";
+    public static final long NUMBER_OF_VIDEOS_RETURNED = 25;
 
 }
