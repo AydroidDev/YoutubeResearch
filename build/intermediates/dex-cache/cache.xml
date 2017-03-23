@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.22.0\d441fc58329c4a4c067acec04ac361627f66ecc8\google-http-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\google-http-client-1.22.0_474bab0d9dd552281406e1167ffad47c42ba4627.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
         jumboMode="false"
         optimize="true"
@@ -66,12 +75,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-youtube\v3-rev181-1.22.0\664988926d2f55ad78cceac473cc51dd4bc5bfcc\google-api-services-youtube-v3-rev181-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="664988926d2f55ad78cceac473cc51dd4bc5bfcc">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\google-api-services-youtube-v3-rev181-1.22.0_9490fe7afdaded74642471312baf7f4633dd47fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
         <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.2.0_a1af4111332258e967b540c37fd73d54ead2bdeb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\libs\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi_8a82cc2f24d521038a4945f58e4d0cc98e603ed3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -84,12 +111,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\jackson-core-2.1.3_b44c2d0f301f50acc141e80e2d60bf67ed340bd9.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
         <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_f3a91176470619c179229d643d757bb799b35b77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\jsr305-1.3.9_2f36922065d4942ec01a5a21434af1e399e4383b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.22.0\cc014d64ae11117e159d334c99d9c246d9b36f44\google-http-client-jackson2-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.22.0_f47dccfab67847cc8205c6c75b1601b0a092bafe.jar" />
     </item>
     <item
         is-multidex="false"
@@ -117,6 +171,33 @@
         revision="25.0.2"
         sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
         <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.2.0_1c21bdc1f62b576fe3e6f83751843f93b301f1f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\guava-jdk5-17.0_c08b3f31b573896ee066518b4065a480c5bf8431.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.22.0\1d63f369ac78e4838a3197147012026e791008cb\google-oauth-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\google-oauth-client-1.22.0_69ab3e19d1938f63e3511d3bbadc5629025e7b20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Salem\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.22.0\244350c0c845c583717ade13f5666a452fd0cfa\google-api-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="C:\Users\Salem\AndroidStudioProjects\YoutubeSearch\app\build\intermediates\pre-dexed\debug\google-api-client-1.22.0_6bc331b0ba07731f1d15ba846e5d6728cc5926b8.jar" />
     </item>
 
 </items>

@@ -15,9 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/buttonResearch"
 
+
         android:nextFocusUp="@id/textVideo"
         android:nextFocusLeft="@id/textVideo"
-        tools:maxLines="1" />
+
+        android:maxLines="1" />
     <Button
         android:id="@+id/buttonResearch"
         android:layout_width="120dp"

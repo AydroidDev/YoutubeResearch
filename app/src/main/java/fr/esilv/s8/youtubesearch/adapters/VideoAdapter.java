@@ -1,5 +1,6 @@
 package fr.esilv.s8.youtubesearch.adapters;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,6 +27,7 @@ import fr.esilv.s8.youtubesearch.models.VideoResponse;
 public class VideoAdapter extends ArrayAdapter<VideoResponse.ItemsBean> {
 
     private final LayoutInflater layoutInflater;
+
 
     public VideoAdapter(Context context, List<VideoResponse.ItemsBean> objects) {
         super(context, 0, objects);
@@ -61,11 +63,20 @@ public class VideoAdapter extends ArrayAdapter<VideoResponse.ItemsBean> {
         //viewHolder.firstNameTextView.setText(student.getFirstName());
         return convertView;
     }
+
+
+
     static class ViewHolder {
+
+
         private TextView title;
         private TextView details;
         private ImageView imageView;
         private TextView channelTitle;
+
+
+
+
     }
 
 

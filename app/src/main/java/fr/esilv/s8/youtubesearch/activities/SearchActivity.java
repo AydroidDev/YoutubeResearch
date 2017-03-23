@@ -1,12 +1,16 @@
 package fr.esilv.s8.youtubesearch.activities;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.android.volley.Response;
@@ -17,6 +21,7 @@ import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.util.List;
 
 import fr.esilv.s8.youtubesearch.adapters.VideoAdapter;
@@ -25,7 +30,7 @@ import fr.esilv.s8.youtubesearch.models.VideoResponse;
 import fr.esilv.s8.youtubesearch.R;
 
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity  {
     private ListView listView;
     private Button buttonResearch;
     private TextView search;
@@ -42,9 +47,10 @@ public class SearchActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.ListVideos);
         buttonResearch = (Button) findViewById(R.id.buttonResearch);
         search = (TextView) findViewById(R.id.textVideo);
+
+        //Query default research.
+
         getVideos("");
-        //fr.esilv.s8.youtubesearch.models.VideoResponse;
-        //Populate the ListView with Dummy Content
 
         buttonResearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -52,18 +58,45 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Intent intent = new Intent(SearchActivity.this, VideoScreen.class);
+                intent.putExtra("idVideo",  (VideoResponse.ItemsBean)listView.getItemAtPosition(position));
+
+                VideoResponse.ItemsBean itemm = (VideoResponse.ItemsBean) listView.getItemAtPosition(position);
+                Log.d("ITEM",itemm.getSnippet().getTitle());
+
+                startActivity(intent);
+
+            }
+        });
+
     }
 
-// Get Json Video datas
+
+    /**
+     * This method takes as input the string written in the TextView.
+     * If the text is an empty String, the default query is to find last french videos published.
+     * Then the request is done in the Youtube API.
+     * Then we get the Json result and parse it to our object VideoResponse which corresponds exactly to the json
+     *
+     * @param queryString The string typed in Research TextView
+     */
     private void getVideos(String queryString) {
         String stringReadyForQuery = TransformStringQuery(queryString);
-        //Log.d("Test", "***********************TESSST**************");
-        String query="";
-        Log.d("TEST",Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&maxResults="+Constants.NUMBER_OF_VIDEOS_RETURNED+"&type=video&key=" + Constants.API_KEY);
-        if(queryString == "")
+        String query = "";
+        Log.d("Queried URL", Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&maxResults=" + Constants.NUMBER_OF_VIDEOS_RETURNED + "&type=video&key=" + Constants.API_KEY);
+
+
+        //Default query is a empty char.
+
+        if (queryString == "")
             query = Constants.VIDEOS_URL + "&order=date&relevanceLanguage=fr&key=" + Constants.API_KEY;
         else
-        query = Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&maxResults="+Constants.NUMBER_OF_VIDEOS_RETURNED+ "&key=" + Constants.API_KEY;
+            query = Constants.VIDEOS_URL + "&q=" + stringReadyForQuery + "&maxResults=" + Constants.NUMBER_OF_VIDEOS_RETURNED + "&key=" + Constants.API_KEY;
 
         StringRequest videosRequest = new StringRequest(query, new Response.Listener<String>() {
 
@@ -74,9 +107,6 @@ public class SearchActivity extends AppCompatActivity {
                 responseAsObject = new Gson().fromJson(response, VideoResponse.class);
                 listVideos = responseAsObject.getItems();
                 setAdapter(responseAsObject);
-
-
-
             }
 
         }, new Response.ErrorListener() {
@@ -89,17 +119,27 @@ public class SearchActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(videosRequest);
     }
 
-
-    private String TransformStringQuery(String queryString){
-        String stringTransformed;
-        stringTransformed = queryString.replace(' ','|');
-        return stringTransformed;
+    /**
+     * The purpose of this query is to adapt the string research to the URL for the API.
+     * Indeed, we must replace the space by | and the ' by %7C.
+     *
+     * @param queryString Exactly what the user of the app typed in the TextVIew
+     * @return the URL adapted String
+     */
+    private String TransformStringQuery(String queryString) {
+        queryString = queryString.replace(' ', '|');
+        queryString = queryString.replace("\'", "%7C");
+        return queryString;
     }
 
+    /**
+     * We use this method to adapt our VideoREsponse object to and ArrayAdapter
+     *
+     * @param videoResponse This is the VideoReponse object we want to adapt to ArrayAdapter
+     */
     private void setAdapter(VideoResponse videoResponse) {
         VideoAdapter videoAdapter = new VideoAdapter(this, listVideos);
         listView.setAdapter(videoAdapter);
     }
-
 
 }

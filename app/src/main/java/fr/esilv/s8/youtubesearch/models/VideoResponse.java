@@ -1,6 +1,10 @@
 package fr.esilv.s8.youtubesearch.models;
 
+
+
         import com.google.gson.annotations.SerializedName;
+
+        import java.io.Serializable;
         import java.util.List;
 
 /**
@@ -103,7 +107,7 @@ public class VideoResponse {
         }
     }
 
-    public static class ItemsBean {
+    public static class ItemsBean implements Serializable{
         /**
          * kind : youtube#searchResult
          * etag : "uQc-MPTsstrHkQcRXL3IWLmeNsM/ZWWpct7CLelELWlfIvRZj5eDtoI"
@@ -115,6 +119,7 @@ public class VideoResponse {
         private String etag;
         private IdBean id;
         private SnippetBean snippet;
+        private int mData;
 
         public String getKind() {
             return kind;
@@ -148,7 +153,7 @@ public class VideoResponse {
             this.snippet = snippet;
         }
 
-        public static class IdBean {
+        public static class IdBean  implements Serializable{
             /**
              * kind : youtube#video
              * videoId : q5l9Vq2CKdg
@@ -174,7 +179,7 @@ public class VideoResponse {
             }
         }
 
-        public static class SnippetBean {
+        public static class SnippetBean  implements Serializable {
             /**
              * publishedAt : 2017-03-18T18:53:03.000Z
              * channelId : UCe_vXdMrHHseZ_esYUskSBw
@@ -249,7 +254,7 @@ public class VideoResponse {
                 this.liveBroadcastContent = liveBroadcastContent;
             }
 
-            public static class ThumbnailsBean {
+            public static class ThumbnailsBean  implements Serializable {
 
                 /**
                  * default : {"url":"https://i.ytimg.com/vi/q5l9Vq2CKdg/default.jpg","width":120,"height":90}
@@ -286,7 +291,7 @@ public class VideoResponse {
                     this.high = high;
                 }
 
-                public static class DefaultBean {
+                public static class DefaultBean  implements Serializable {
                     /**
                      * url : https://i.ytimg.com/vi/q5l9Vq2CKdg/default.jpg
                      * width : 120
@@ -322,7 +327,7 @@ public class VideoResponse {
                     }
                 }
 
-                public static class MediumBean {
+                public static class MediumBean  implements Serializable {
                     /**
                      * url : https://i.ytimg.com/vi/q5l9Vq2CKdg/mqdefault.jpg
                      * width : 320
@@ -358,7 +363,7 @@ public class VideoResponse {
                     }
                 }
 
-                public static class HighBean {
+                public static class HighBean  implements Serializable {
                     /**
                      * url : https://i.ytimg.com/vi/q5l9Vq2CKdg/hqdefault.jpg
                      * width : 480
